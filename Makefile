@@ -8,5 +8,8 @@ migrate: ## migrate db
 	docker-compose run --rm web python manage.py migrate
 
 lint: ## migrate db
-	docker-compose run --rm web flake8 app
-	docker-compose run --rm web mypy --ignore-missing-imports --follow-imports=silent app
+	docker-compose run --rm web flake8 app pokemons
+	docker-compose run --rm web mypy --ignore-missing-imports --follow-imports=silent app pokemons
+
+catch_pokemons: ## migrate db
+	docker-compose run --rm web python manage.py catch_pokemons

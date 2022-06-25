@@ -1,5 +1,6 @@
 Django>=3.0,<4.0
 psycopg2-binary>=2.8
+aiohttp==3.8.1
 
 # dev requirements, better to not include in the production image
 black==22.3.0
