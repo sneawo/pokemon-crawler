@@ -1,4 +1,3 @@
-import asyncio
 from django.core.management.base import BaseCommand
 from pokemons.crawler import catch_pokemons
 

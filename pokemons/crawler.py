@@ -55,7 +55,7 @@ def _save_pokemons(pokemons: list[dict]) -> None:
         pokemon.save()  # for performance better to use bulk_create, bulk_update
         add_abilities(pokemon, pokemon_dict.get("abilities", []))
 
-    logger.info(f"action=save_pokemons, status=success")
+    logger.info("action=save_pokemons, status=success")
 
 
 def catch_pokemons() -> None:

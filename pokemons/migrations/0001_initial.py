@@ -8,28 +8,32 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Pokemon',
+            name="Pokemon",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=256)),
-                ('weight', models.IntegerField()),
-                ('height', models.IntegerField()),
-                ('image_url', models.URLField()),
+                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("name", models.CharField(max_length=256)),
+                ("weight", models.IntegerField()),
+                ("height", models.IntegerField()),
+                ("image_url", models.URLField()),
             ],
         ),
         migrations.CreateModel(
-            name='PokemonAbility',
+            name="PokemonAbility",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=256)),
-                ('is_hidden', models.BooleanField()),
-                ('slot', models.IntegerField()),
-                ('pokemon', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='abilities', to='pokemons.pokemon')),
+                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("name", models.CharField(max_length=256)),
+                ("is_hidden", models.BooleanField()),
+                ("slot", models.IntegerField()),
+                (
+                    "pokemon",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, related_name="abilities", to="pokemons.pokemon"
+                    ),
+                ),
             ],
         ),
     ]
