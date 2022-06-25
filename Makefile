@@ -9,7 +9,7 @@ migrate: ## migrate db
 
 lint: ## migrate db
 	docker-compose run --rm web flake8 app pokemons
-	docker-compose run --rm web mypy --ignore-missing-imports --follow-imports=silent app pokemons
+	docker-compose run --rm web mypy --ignore-missing-imports --follow-imports=silent --exclude migrations app pokemons
 
 test: ## run tests
 	docker-compose run --rm web python manage.py test

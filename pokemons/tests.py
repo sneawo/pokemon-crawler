@@ -3,7 +3,7 @@ from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
 
-from pokemons.models import Pokemon, PokemonAbility
+from pokemons.models import Pokemon
 from pokemons import crawler
 
 
@@ -39,7 +39,7 @@ class CrawlerSavePokemonsTests(TestCase):
         abilities = pokemon.abilities.all()
         assert len(abilities) == 1
         assert abilities[0].name == "run-away"
-        assert abilities[0].is_hidden == True
+        assert abilities[0].is_hidden
         assert abilities[0].slot == 1
 
     def test_update_pokemon(self):
@@ -65,7 +65,7 @@ class CrawlerSavePokemonsTests(TestCase):
         abilities = pokemon.abilities.all()
         assert len(abilities) == 1
         assert abilities[0].name == "run-away"
-        assert abilities[0].is_hidden == True
+        assert abilities[0].is_hidden
         assert abilities[0].slot == 1
 
 
