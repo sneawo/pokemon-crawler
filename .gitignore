@@ -133,3 +133,6 @@ dmypy.json
 
 # Postgres data
 pg_data
+
+# VSCode
+.vscode
