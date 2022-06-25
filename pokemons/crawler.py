@@ -1,7 +1,9 @@
 import asyncio
 import aiohttp
 import logging
+
 from asgiref.sync import async_to_sync
+
 from pokemons.models import Pokemon
 
 logger = logging.getLogger(__name__)

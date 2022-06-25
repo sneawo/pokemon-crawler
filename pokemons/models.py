@@ -7,9 +7,15 @@ class Pokemon(models.Model):
     height = models.IntegerField()
     image_url = models.URLField()
 
+    def __str__(self):
+        return self.name
+
 
 class PokemonAbility(models.Model):
     pokemon = models.ForeignKey(Pokemon, related_name="abilities", on_delete=models.CASCADE)
     name = models.CharField(max_length=256)  # here we can use fk to Ability model
     is_hidden = models.BooleanField()
     slot = models.IntegerField()
+
+    def __str__(self):
+        return self.name
